@@ -1,0 +1,12 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="centeredTextViewStyle">@style/CenteredTextViewStyle</item>
+    </style>
+
+    <style name="CenteredTextViewStyle" parent="@android:style/Widget.TextView">
+        <!-- ready to accomodate custom styles-->
+    </style>
+</resources>

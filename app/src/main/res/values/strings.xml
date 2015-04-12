@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CenteredTextView</string>
+
+    <string name="main_activity_demo_char">9</string>
+    <string name="action_settings">Settings</string>
+    <string name="main_activity_show_guidelines_text">Show guidelines</string>
+    <string name="main_activity_hint_source_text">Type something to display</string>
+    <string name="main_activity_text_size_bar">Text Size:</string>
+    <string name="main_activity_input_text">Show text:</string>
+</resources>

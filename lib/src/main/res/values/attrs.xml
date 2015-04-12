@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CenteredTextView">
+        <attr name="rounded_background_color" format="color"/>
+        <attr name="show_guidelines" format="boolean"/>
+        <attr name="centeredTextViewStyle" format="reference"/>
+    </declare-styleable>
+</resources>
