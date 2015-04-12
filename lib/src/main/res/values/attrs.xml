@@ -5,4 +5,8 @@
         <attr name="show_guidelines" format="boolean"/>
         <attr name="centeredTextViewStyle" format="reference"/>
     </declare-styleable>
+
+    <declare-styleable name="CounterTextView">
+        <attr name="overflow_prefix" format="string"/>
+    </declare-styleable>
 </resources>

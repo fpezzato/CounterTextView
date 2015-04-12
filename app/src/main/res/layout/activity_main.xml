@@ -16,16 +16,15 @@
         android:orientation="horizontal"
         android:weightSum="1"
         >
-
         <TextView
             android:text="@string/main_activity_text_size_bar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <SeekBar
+            android:id="@+id/main_activity_text_size_bar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/seek_bar"
             android:max="60"
             android:layout_weight="1"
             />
@@ -51,23 +50,31 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <EditText
-            android:id="@+id/source_text"
-            android:hint="@string/main_activity_hint_source_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+        <SeekBar
+            android:id="@+id/main_activity_count_bar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:max="110"
+            android:layout_weight="1"
+            />
+        <TextView
+            android:id="@+id/main_activity_current_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
     </LinearLayout>
 
-    <!-- useless RelativeLayout, just to avoid pollution in CenteredTextView -->
+    <!-- useless RelativeLayout, just to avoid pollution in the CounterTextView attribs: this activity is just a demo. -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        android:gravity="center_horizontal"
         >
 
-        <org.fpezzato.countertextview.CenteredTextView
-            android:id="@+id/centered_text_view"
-            android:text="@string/main_activity_demo_char"
+        <org.fpezzato.countertextview.CounterTextView
+            android:id="@+id/counter_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
@@ -75,6 +82,7 @@
             android:background="@android:color/darker_gray"
             app:rounded_background_color="@color/rounded_background_color"
             app:show_guidelines="false"
+            app:overflow_prefix="+"
             />
     </RelativeLayout>
 </LinearLayout>

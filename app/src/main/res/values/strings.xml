@@ -6,5 +6,5 @@
     <string name="main_activity_show_guidelines_text">Show guidelines</string>
     <string name="main_activity_hint_source_text">Type something to display</string>
     <string name="main_activity_text_size_bar">Text Size:</string>
-    <string name="main_activity_input_text">Show text:</string>
+    <string name="main_activity_input_text">Show count:</string>
 </resources>

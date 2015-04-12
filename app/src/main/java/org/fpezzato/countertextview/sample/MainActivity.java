@@ -3,78 +3,73 @@ package org.fpezzato.countertextview.sample;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.EditText;
 import android.widget.SeekBar;
+import android.widget.TextView;
 
-import org.fpezzato.countertextview.CenteredTextView;
+import org.fpezzato.countertextview.CounterTextView;
 
 
 public class MainActivity extends ActionBarActivity {
 
-	private CenteredTextView mCenteredTextView;
-	private EditText mTextSource;
+	private CounterTextView mCounterTextView;
+	private TextView mCurrentRealCount;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		mTextSource = (EditText)findViewById(R.id.source_text);
-		mCenteredTextView = (CenteredTextView) findViewById(R.id.centered_text_view);
+		mCounterTextView = (CounterTextView) findViewById(R.id.counter_text_view);
+		mCurrentRealCount = (TextView)findViewById(R.id.main_activity_current_count);
 
-		SeekBar seekBar = (SeekBar) findViewById(R.id.seek_bar);
-		seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-
+		SeekBar textSizeSeekBar = (SeekBar) findViewById(R.id.main_activity_text_size_bar);
+		textSizeSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 			@Override
 			public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-				//	mCenteredTextView.setTextSize(progress)
-
-				mCenteredTextView.setTextSize(progress);
-				if(isNullOrBlank(mTextSource.getText().toString())){
-					mCenteredTextView.setText(Integer.valueOf(progress).toString());
-				}
+				mCounterTextView.setTextSize(progress);
 			}
 
 			@Override
 			public void onStartTrackingTouch(SeekBar seekBar) {
-
+				//nop
 			}
 
 			@Override
 			public void onStopTrackingTouch(SeekBar seekBar) {
-
+				//nop
 			}
 		});
 
-		((CheckBox)findViewById(R.id.checkbox_show_guidelines)).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+		SeekBar countBar = (SeekBar) findViewById(R.id.main_activity_count_bar);
+		countBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+			@Override
+			public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+				mCounterTextView.setCount(progress);
+				mCurrentRealCount.setText(Integer.valueOf(progress).toString());
+			}
+
+			@Override
+			public void onStartTrackingTouch(SeekBar seekBar) {
+				//nop
+			}
+
+			@Override
+			public void onStopTrackingTouch(SeekBar seekBar) {
+				//nop
+			}
+		});
+		((CheckBox) findViewById(R.id.checkbox_show_guidelines)).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-				mCenteredTextView.setGuidelinesShown(isChecked);
+				mCounterTextView.setGuidelinesShown(isChecked);
 			}
 		});
 
-		mTextSource.addTextChangedListener(new TextWatcher() {
-			@Override
-			public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-			}
-
-			@Override
-			public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-			}
-
-			@Override
-			public void afterTextChanged(Editable s) {
-				mCenteredTextView.setText(s.toString());
-			}
-		});
 	}
 
 	@Override
@@ -99,7 +94,7 @@ public class MainActivity extends ActionBarActivity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	private boolean isNullOrBlank(String s){
+	private boolean isNullOrBlank(String s) {
 		return s == null || s.trim().equals("");
 	}
 }
