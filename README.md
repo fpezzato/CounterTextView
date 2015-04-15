@@ -10,7 +10,7 @@ I have prepared a ```CenteredTextView``` with Chris's raccomandations and a ```C
 
 ## Demo
 
-![Demo effect with notification](/../screenshots/counterDemo03.gif?raw=true "Example with a notification counter") 
+![Demo effect with notification](/../screenshots/screenshots/counterDemo03.gif?raw=true "Example with a notification counter") 
 
 ## Usage
 Insert in your layout:
