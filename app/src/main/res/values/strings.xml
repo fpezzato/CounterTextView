@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CenteredTextView</string>
+    <string name="app_name">CounterTextView</string>
 
     <string name="main_activity_demo_char">9</string>
     <string name="action_settings">Settings</string>
