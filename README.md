@@ -21,9 +21,9 @@ Insert in your layout:
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
             android:textSize="12sp"
-            app:rounded_background_color="@color/red"
-            app:show_guidelines="false"
-            app:overflow_prefix="+"
+            app:ctv_rounded_background_color="@color/red"
+            app:ctv_show_guidelines="false"
+            app:ctv_overflow_prefix="+"
             />
 ```
 
