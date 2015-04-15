@@ -21,18 +21,44 @@ Insert in your layout:
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
             android:textSize="12sp"
-            app:rounded_background_color="@color/red"
-            app:show_guidelines="false"
-            app:overflow_prefix="+"
+            app:ctv_rounded_background_color="@color/red"
+            app:ctv_show_guidelines="false"
+            app:ctv_overflow_prefix="+"
             />
 ```
+
+Custom attributes you can specify:
+* ```ctv_rounded_background_color```:  a reference to a valid color used as 'holo' with rounded corners. If the text is short enough, a perfect circle shape is kept, based on the current text size. whoo!
+* ```ctv_show_guidelines```: true/false, to display a visual reference grid with debug pourpose. 
+* ```ctv_overflow_prefix```: The string prefixed to the max upper bound when the count overflow the limit.
 
 
 ## Personal opinion
 
-PS: I think that some  bits in the original Chris' post are not correct (at least in my case) so I decided to build this prototype with small tweaks and fixes.
+PS: Some bits in the original Chris Banes post were not working in my case so I have build this prototype with tiny tweaks and fixes.
 
-## Licence
+License
+-------
 
+The MIT License (MIT)
 
+Copyright (c) 2015 Francesco
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
