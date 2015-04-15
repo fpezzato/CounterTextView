@@ -16,6 +16,7 @@ import org.fpezzato.countertextview.CounterTextView;
 public class MainActivity extends ActionBarActivity {
 
 	private CounterTextView mCounterTextView;
+	private CounterTextView mNotificationCounter;
 	private TextView mCurrentRealCount;
 
 	@Override
@@ -25,6 +26,7 @@ public class MainActivity extends ActionBarActivity {
 
 		mCounterTextView = (CounterTextView) findViewById(R.id.counter_text_view);
 		mCurrentRealCount = (TextView)findViewById(R.id.main_activity_current_count);
+		mNotificationCounter = (CounterTextView)findViewById(R.id.main_activity_notification_count);
 
 		SeekBar textSizeSeekBar = (SeekBar) findViewById(R.id.main_activity_text_size_bar);
 		textSizeSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -48,7 +50,7 @@ public class MainActivity extends ActionBarActivity {
 		countBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 			@Override
 			public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-				mCounterTextView.setCount(progress);
+				updateCount(progress);
 				mCurrentRealCount.setText(Integer.valueOf(progress).toString());
 			}
 
@@ -68,7 +70,6 @@ public class MainActivity extends ActionBarActivity {
 				mCounterTextView.setGuidelinesShown(isChecked);
 			}
 		});
-
 
 	}
 
@@ -94,7 +95,8 @@ public class MainActivity extends ActionBarActivity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	private boolean isNullOrBlank(String s) {
-		return s == null || s.trim().equals("");
+	private void updateCount(int count){
+		mNotificationCounter.setCount(count);
+		mCounterTextView.setCount(count);
 	}
 }

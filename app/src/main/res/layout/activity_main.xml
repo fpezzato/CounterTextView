@@ -10,12 +10,36 @@
               tools:context=".MainActivity"
               android:orientation="vertical">
 
+    <RelativeLayout
+        android:layout_width="@dimen/main_activity_notification_icon_square_size"
+        android:layout_height="@dimen/main_activity_notification_icon_square_size"
+        android:background="@drawable/ic_notifications_grey600_48dp"
+        >
+
+        <org.fpezzato.countertextview.CounterTextView
+            android:id="@+id/main_activity_notification_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="99+"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:paddingLeft="4dp"
+            android:paddingTop="2dp"
+            android:paddingRight="4dp"
+            android:paddingBottom="2dp"
+            app:rounded_background_color="@color/rounded_background_color"/>
+    </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="1"
         >
+
         <TextView
             android:text="@string/main_activity_text_size_bar"
             android:layout_width="wrap_content"
@@ -57,6 +81,7 @@
             android:max="110"
             android:layout_weight="1"
             />
+
         <TextView
             android:id="@+id/main_activity_current_count"
             android:layout_width="wrap_content"
@@ -78,8 +103,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
-            android:textSize="5sp"
-            android:background="@android:color/darker_gray"
+            android:textSize="12sp"
             app:rounded_background_color="@color/rounded_background_color"
             app:show_guidelines="false"
             app:overflow_prefix="+"
