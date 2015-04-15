@@ -35,7 +35,7 @@ Custom attributes you can specify:
 
 ## Personal opinion
 
-PS: I think that some  bits in the original Chris' post are not correct (at least in my case) so I decided to build this prototype with small tweaks and fixes.
+PS: Some bits in the original Chris Banes post were not working in my case so I have build this prototype with tiny tweaks and fixes.
 
 License
 -------
