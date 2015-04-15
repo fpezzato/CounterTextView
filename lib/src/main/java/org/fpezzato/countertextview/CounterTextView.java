@@ -42,7 +42,7 @@ public class CounterTextView extends CenteredTextView {
 
 		try {
 			//Explicit overflow string
-			String overflowPrefix = a.getString(R.styleable.CounterTextView_overflow_prefix);
+			String overflowPrefix = a.getString(R.styleable.CounterTextView_ctv_overflow_prefix);
 			if (overflowPrefix != null) {
 				mOverflowPrefix = overflowPrefix;
 			}

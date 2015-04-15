@@ -35,7 +35,7 @@ public class CenteredTextView extends TextView {
 	}
 
 	public CenteredTextView(Context context, AttributeSet attrs) {
-		super(context, attrs, R.attr.centeredTextViewStyle);
+		super(context, attrs, R.attr.ctv_centeredTextViewStyle);
 
 		setAttributes(context, attrs);
 		init();
@@ -54,16 +54,16 @@ public class CenteredTextView extends TextView {
 		TypedArray a = context.getTheme().obtainStyledAttributes(
 			attrs,
 			R.styleable.CenteredTextView,
-			R.attr.centeredTextViewStyle,
+			R.attr.ctv_centeredTextViewStyle,
 			0);
 
 		try {
 			//Explicit background color
-			int color = a.getColor(R.styleable.CenteredTextView_rounded_background_color, Color.TRANSPARENT);
+			int color = a.getColor(R.styleable.CenteredTextView_ctv_rounded_background_color, Color.TRANSPARENT);
 			mBackground = new PaintDrawable(color);
 
 			//enable debug mode from xml
-			mShowGuidelines = a.getBoolean(R.styleable.CenteredTextView_show_guidelines, false);
+			mShowGuidelines = a.getBoolean(R.styleable.CenteredTextView_ctv_show_guidelines, false);
 
 		} finally {
 			a.recycle();

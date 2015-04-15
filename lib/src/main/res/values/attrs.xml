@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="CenteredTextView">
-        <attr name="rounded_background_color" format="color"/>
-        <attr name="show_guidelines" format="boolean"/>
-        <attr name="centeredTextViewStyle" format="reference"/>
+        <attr name="ctv_rounded_background_color" format="color"/>
+        <attr name="ctv_show_guidelines" format="boolean"/>
+        <attr name="ctv_centeredTextViewStyle" format="reference"/>
     </declare-styleable>
 
     <declare-styleable name="CounterTextView">
-        <attr name="overflow_prefix" format="string"/>
+        <attr name="ctv_overflow_prefix" format="string"/>
     </declare-styleable>
 </resources>
